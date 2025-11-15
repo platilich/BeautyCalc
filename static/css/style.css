@@ -1,0 +1,146 @@
+/* Import Google Fonts - Montserrat for a modern look */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+/* Base styles for the body */
+body {
+    /* Set background image, cover the entire viewport, center it, and prevent repetition */
+    background-image: url('/static/img/photo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Apply Montserrat font */
+    font-family: 'Montserrat', sans-serif;
+
+    /* Ensure body takes full viewport width and height */
+    width: 100vw;
+    height: 100vh;
+    /* Remove default padding and margin */
+    padding: 0;
+    margin: 0;
+
+    /* Set text color to white and a base font size */
+    color: white;
+    font-size: 140%;
+}
+
+/* Main content area, used for centering the calculator */
+main {
+    /* Ensure main takes full viewport width and height */
+    width: 100vw;
+    height: 100vh;
+    /* Use flexbox to center its child (the calculator) */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+}
+
+/* Calculator container styling */
+.calculator {
+    display: flex;
+    flex-direction: column; /* Arrange items in a column */
+    justify-content: center;
+    margin: 5%; /* Add some margin around the calculator */
+}
+
+/* Styling for rows of buttons */
+.btns-row {
+    display: flex;
+    justify-content: center; /* Center buttons horizontally within the row */
+    align-items: center;
+}
+
+/* Input field styling */
+.input-field {
+    /* Semi-transparent dark background with a blur effect */
+    background: rgba(25, 25, 25, 0.7);
+    backdrop-filter: blur(15px);
+
+    width: 80px;
+    height: 110px;
+    color: white; /* Text color */
+    font-size: 110%; /* Font size relative to parent */
+    border-radius: 25px; /* Rounded corners */
+    font-family: 'Montserrat', sans-serif; /* Apply Montserrat font */
+    flex-grow: 1; /* Allow input field to grow and take available space */
+    margin: 0 .2em; /* Horizontal margin */
+    border: none; /* Remove default border */
+    outline: none; /* Remove outline on focus */
+    cursor: default; /* Change cursor to default, as it's not an editable input */
+    /* Prevent text selection */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-align: right; /* Align text to the right */
+    padding: 0 10px; /* Add padding for text */
+}
+
+/* Button styling */
+.btn {
+    /* Semi-transparent dark background with a blur effect */
+    background: rgba(25, 25, 25, 0.7);
+    backdrop-filter: blur(15px);
+
+
+    height: 110px;
+    width: 110px;
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    margin: .2em; /* Margin around buttons */
+    border-radius: 25px; /* Rounded corners */
+
+
+    user-select: none;
+    -webkit-user-select: none; /* For Safari */
+    -moz-user-select: none; /* For Firefox */
+    -ms-user-select: none; /* For Internet Explorer и Edge */
+}
+
+/* Hover effect for buttons */
+.btn:hover {
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+/* Active (clicked) state for buttons */
+.btn:active {
+    background: rgba(25, 25, 25, 1); /* Darker background when active */
+}
+
+/* Media queries for mobile devices */
+@media screen and (max-width: 600px) {
+    body {
+        font-size: 100%; /* Decrease base font size for smaller screens */
+    }
+
+    .calculator {
+        margin: 2%; /* Decrease calculator margins */
+    }
+
+    .input-field {
+        height: 70px; /* Decrease input field height */
+        font-size: 70%; /* Decrease font size in input field */
+        margin: 0 .15em; /* Decrease margins */
+    }
+
+    .btn {
+        height: 70px; /* Decrease button height */
+        width: 70px; /* Decrease button width */
+        margin: .15em; /* Decrease margins */
+        font-size: 120%; /* Decrease font size on buttons */
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .input-field {
+        height: 80px;
+        /* flex-grow: 1 will handle width, no fixed width needed */
+        font-size: 180%; /* Adjust font size for very small screens */
+    }
+
+    .btn {
+        height: 80px;
+        width: 80px;
+        font-size: 180%;
+    }
+}
