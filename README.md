@@ -9,7 +9,7 @@ To run this project, you need a web server. You can use any simple HTTP server.
 For example, using Python:
 
 ```bash
-cd /home/plat/projects/Calculator
+cd Calculator
 python -m http.server 8000
 ```
 
